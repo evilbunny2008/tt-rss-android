@@ -13,6 +13,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 // TODO: serialize Labels
+@SuppressWarnings("CallToPrintStackTrace")
 public class Article {
     public static final int TYPE_AMR_FOOTER = -2;
 

@@ -19,6 +19,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import org.fox.ttrss.types.Article;
 import org.fox.ttrss.types.Feed;
 
+@SuppressWarnings("CallToPrintStackTrace")
 public class DetailActivity extends OnlineActivity implements HeadlinesEventListener {
     private static final String TAG = DetailActivity.class.getSimpleName();
     protected BottomAppBar m_bottomAppBar;

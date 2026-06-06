@@ -29,6 +29,7 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.stream.Collectors;
 
+@SuppressWarnings("CallToPrintStackTrace")
 public class ArticleModel extends AndroidViewModel implements ApiCommon.ApiCaller {
     private static final String TAG = ArticleModel.class.getSimpleName();
     private static final Gson GSON = new Gson();

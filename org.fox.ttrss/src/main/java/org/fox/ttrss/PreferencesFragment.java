@@ -7,6 +7,7 @@ import android.content.pm.PackageManager;
 import android.os.Bundle;
 
 import androidx.annotation.Nullable;
+import androidx.preference.Preference;
 import androidx.preference.PreferenceFragmentCompat;
 import androidx.preference.PreferenceManager;
 
@@ -14,7 +15,9 @@ import com.google.android.material.color.DynamicColors;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Locale;
 
+@SuppressWarnings("CallToPrintStackTrace")
 public class PreferencesFragment extends PreferenceFragmentCompat {
 
     @Override
@@ -59,11 +62,16 @@ public class PreferencesFragment extends PreferenceFragmentCompat {
             version = packageInfo.versionName;
             versionCode = packageInfo.versionCode;
 
-            findPreference("version").setSummary(getString(R.string.prefs_version, version, versionCode));
+            Preference versionPref = findPreference("version");
+            if(versionPref != null)
+                versionPref.setSummary(getString(R.string.prefs_version, version, versionCode));
 
-            buildTimestamp = new SimpleDateFormat("yyyy.MM.dd HH:mm:ss").format(new Date(BuildConfig.TIMESTAMP));
 
-            findPreference("build_timestamp").setSummary(getString(R.string.prefs_build_timestamp, buildTimestamp));
+            buildTimestamp = new SimpleDateFormat("yyyy.MM.dd HH:mm:ss", Locale.getDefault()).format(new Date(BuildConfig.TIMESTAMP));
+
+            Preference build_timestamp = findPreference("build_timestamp");
+            if(build_timestamp != null)
+                build_timestamp.setSummary(getString(R.string.prefs_build_timestamp, buildTimestamp));
 
         } catch (PackageManager.NameNotFoundException e) {
             e.printStackTrace();

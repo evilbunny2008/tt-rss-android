@@ -72,7 +72,7 @@ public class PagerAwareImageMatrixTouchHandler extends ImageMatrixTouchHandler {
      * @param dh
      * @return
      */
-    public static final float centerInsideScale(float vw, float vh, float dw, float dh) {
+    public static float centerInsideScale(float vw, float vh, float dw, float dh) {
         return vw / vh <= dw / dh ? vw / dw : vh / dh;
     }
 
@@ -84,7 +84,7 @@ public class PagerAwareImageMatrixTouchHandler extends ImageMatrixTouchHandler {
      * @param dw
      * @return
      */
-    public static final boolean translationExceedsBoundary(float tx, float vw, float dw) {
+    public static boolean translationExceedsBoundary(float tx, float vw, float dw) {
         return dw >= vw && (tx > 0 || tx < vw - dw);
     }
 }

@@ -46,6 +46,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
+@SuppressWarnings("CallToPrintStackTrace")
 public class FeedsFragment extends Fragment implements OnSharedPreferenceChangeListener {
     private static final String TAG = FeedsFragment.class.getSimpleName();
     protected SharedPreferences m_prefs;
@@ -56,7 +57,6 @@ public class FeedsFragment extends Fragment implements OnSharedPreferenceChangeL
     private boolean m_enableParentBtn = false;
     protected FeedsAdapter m_adapter;
     private RecyclerView m_list;
-    private RecyclerView.LayoutManager m_layoutManager;
     private LinearProgressIndicator m_loadingProgress;
 
     public void initialize(@NonNull Feed rootFeed, boolean enableParentBtn) {
@@ -177,7 +177,7 @@ public class FeedsFragment extends Fragment implements OnSharedPreferenceChangeL
         m_list = view.findViewById(R.id.feeds);
         registerForContextMenu(m_list);
 
-        m_layoutManager = new LinearLayoutManager(m_activity.getApplicationContext());
+        RecyclerView.LayoutManager m_layoutManager = new LinearLayoutManager(m_activity.getApplicationContext());
         m_list.setLayoutManager(m_layoutManager);
         m_list.setItemAnimator(new DefaultItemAnimator());
 

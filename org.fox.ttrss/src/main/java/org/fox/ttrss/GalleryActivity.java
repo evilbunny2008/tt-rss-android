@@ -27,6 +27,7 @@ import org.fox.ttrss.util.DiffFragmentStateAdapter;
 
 import me.relex.circleindicator.CircleIndicator3;
 
+@SuppressWarnings("CallToPrintStackTrace")
 public class GalleryActivity extends CommonActivity {
     private static final String TAG = GalleryActivity.class.getSimpleName();
 

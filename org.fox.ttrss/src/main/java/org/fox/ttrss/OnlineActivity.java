@@ -51,6 +51,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
+@SuppressWarnings("CallToPrintStackTrace")
 @SuppressLint("StaticFieldLeak")
 public class OnlineActivity extends CommonActivity {
     private static final String TAG = OnlineActivity.class.getSimpleName();

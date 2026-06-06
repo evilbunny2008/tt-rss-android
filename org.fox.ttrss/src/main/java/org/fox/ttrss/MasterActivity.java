@@ -32,6 +32,7 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 
+@SuppressWarnings("CallToPrintStackTrace")
 public class MasterActivity extends OnlineActivity implements HeadlinesEventListener {
     private static final String TAG = MasterActivity.class.getSimpleName();
 

@@ -32,6 +32,7 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.stream.Collectors;
 
+@SuppressWarnings("CallToPrintStackTrace")
 public class FeedsModel extends AndroidViewModel implements ApiCommon.ApiCaller {
     private static final String TAG = FeedsModel.class.getSimpleName();
     private static final Gson GSON = new Gson();

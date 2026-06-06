@@ -20,6 +20,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.stream.Collectors;
 
+@SuppressWarnings("CallToPrintStackTrace")
 public class RootCategoriesModel extends FeedsModel {
     private static final String TAG = RootCategoriesModel.class.getSimpleName();
     private static final Gson GSON = new Gson();

@@ -28,9 +28,9 @@ import org.fox.ttrss.util.SimpleLoginManager;
 
 import java.util.HashMap;
 
+@SuppressWarnings("CallToPrintStackTrace")
 public class WidgetUpdateService extends JobIntentService {
     private static final String TAG = WidgetUpdateService.class.getSimpleName();
-    private SharedPreferences m_prefs;
 
     public static final int UPDATE_RESULT_OK = 0;
     public static final int UPDATE_RESULT_ERROR_LOGIN = 1;
@@ -78,7 +78,7 @@ public class WidgetUpdateService extends JobIntentService {
                 return;
             }
 
-            m_prefs = PreferenceManager
+            SharedPreferences m_prefs = PreferenceManager
                     .getDefaultSharedPreferences(getApplicationContext());
 
             if (m_prefs.getString("ttrss_url", "").trim().isEmpty()) {

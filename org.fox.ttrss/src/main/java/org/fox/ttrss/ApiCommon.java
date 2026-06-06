@@ -5,8 +5,6 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
-import android.net.ConnectivityManager;
-import android.net.NetworkInfo;
 import android.util.Log;
 
 import androidx.annotation.NonNull;
@@ -35,8 +33,8 @@ import okio.Buffer;
 import okio.BufferedSource;
 import okio.ForwardingSource;
 import okio.Okio;
-import okio.Source;
 
+@SuppressWarnings("CallToPrintStackTrace")
 public class ApiCommon {
     public static final String TAG = ApiCommon.class.getName();
 
@@ -118,16 +116,6 @@ public class ApiCommon {
         }
     }
 
-    static boolean isNetworkAvailable(Context context) {
-        ConnectivityManager cm = (ConnectivityManager)
-                context.getSystemService(Context.CONNECTIVITY_SERVICE);
-        NetworkInfo networkInfo = cm.getActiveNetworkInfo();
-
-        // if no network is available networkInfo will be null
-        // otherwise check if we are connected
-        return networkInfo != null && networkInfo.isConnected();
-    }
-
     static JsonElement performRequest(Context context, @NonNull HashMap<String, String> m_params,
                                       @NonNull ApiCommon.ApiCaller caller) {
         try {
@@ -138,7 +126,8 @@ public class ApiCommon {
             String payload = GSON.toJson(new HashMap<>(m_params));
             String apiUrl = m_prefs.getString("ttrss_url", "").trim() + "/api/";
 
-            if (m_transportDebugging) Log.d(TAG, ">>> " + payload + " -> " + apiUrl);
+            if (m_transportDebugging)
+                Log.d(TAG, ">>> " + payload + " -> " + apiUrl);
 
             Request.Builder requestBuilder = new Request.Builder()
                     .url(apiUrl)

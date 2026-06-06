@@ -24,6 +24,7 @@ import java.util.List;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
+@SuppressWarnings("CallToPrintStackTrace")
 public class GalleryModel extends AndroidViewModel {
     private static final String TAG = GalleryModel.class.getSimpleName();
 

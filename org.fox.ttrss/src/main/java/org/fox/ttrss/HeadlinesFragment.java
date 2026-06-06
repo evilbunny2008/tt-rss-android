@@ -90,6 +90,7 @@ import java.util.Date;
 import java.util.List;
 import java.util.TimeZone;
 
+@SuppressWarnings("CallToPrintStackTrace")
 public class HeadlinesFragment extends androidx.fragment.app.Fragment {
 
     private boolean m_isLazyLoading;
@@ -699,7 +700,6 @@ public class HeadlinesFragment extends androidx.fragment.app.Fragment {
         private final int m_colorSurfaceContainerLowest;
         private final int m_colorSurface;
         private final int m_colorPrimary;
-        private final int m_colorTertiary;
         private final int m_colorSecondary;
         private final int m_colorOnSurface;
         private final int m_colorTertiaryContainer;
@@ -752,7 +752,7 @@ public class HeadlinesFragment extends androidx.fragment.app.Fragment {
 
             m_colorPrimary = colorFromAttr(R.attr.colorPrimary);
             m_colorSecondary = colorFromAttr(R.attr.colorSecondary);
-            m_colorTertiary = colorFromAttr(R.attr.colorTertiary);
+            int m_colorTertiary = colorFromAttr(R.attr.colorTertiary);
 
             m_cslTertiary = ColorStateList.valueOf(m_colorTertiary);
             m_cslPrimary = ColorStateList.valueOf(m_colorPrimary);

@@ -13,6 +13,7 @@ import java.util.HashMap;
 public abstract class SimpleLoginManager {
     private static final String TAG = SimpleLoginManager.class.getSimpleName();
 
+    @SuppressWarnings("CallToPrintStackTrace")
     protected class LoginRequest extends ApiRequest {
         private final int m_requestId;
         protected String m_sessionId;

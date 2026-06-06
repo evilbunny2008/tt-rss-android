@@ -34,6 +34,7 @@ import java.util.Date;
 import java.util.regex.Pattern;
 
 // TODO: add ability to update already rendered contents from article somehow (to refresh note, etc)
+@SuppressWarnings("CallToPrintStackTrace")
 public class ArticleFragment extends androidx.fragment.app.Fragment {
     private static final String TAG = ArticleFragment.class.getSimpleName();
     private static final Pattern IMAGE_TAG_PATTERN = Pattern.compile(".*?<img[^>+].*?");

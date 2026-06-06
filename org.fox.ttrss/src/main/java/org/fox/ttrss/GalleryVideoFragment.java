@@ -19,6 +19,7 @@ import androidx.core.view.ViewCompat;
 
 import java.io.IOException;
 
+@SuppressWarnings("CallToPrintStackTrace")
 public class GalleryVideoFragment extends GalleryBaseFragment {
     private static final String TAG = GalleryVideoFragment.class.getSimpleName();
 

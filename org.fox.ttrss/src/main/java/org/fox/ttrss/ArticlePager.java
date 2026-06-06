@@ -21,6 +21,7 @@ import org.fox.ttrss.util.DiffFragmentStateAdapter;
 
 import java.util.ArrayList;
 
+@SuppressWarnings("CallToPrintStackTrace")
 public class ArticlePager extends androidx.fragment.app.Fragment {
 
     private static final String TAG = ArticlePager.class.getSimpleName();
